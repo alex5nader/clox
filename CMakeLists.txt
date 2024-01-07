@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.26.4)
 
-project(CLOX C)
+project(clox C)
 
 
 set(SOURCES
-  src/main.c
+        src/main.c
         src/chunk.c
         src/memory.c
         src/memory.h
@@ -12,15 +12,17 @@ set(SOURCES
         src/debug.h
         src/value.c
         src/value.h
+        src/vm.c
+        src/vm.h
 )
 
 add_executable(project ${SOURCES})
 
-set_property(TARGET project  PROPERTY C_STANDARD 99)
+set_property(TARGET project PROPERTY C_STANDARD 99)
 target_compile_options(project
-  PRIVATE
-    -Wall
-    -Werror
-    -Wextra
+        PRIVATE
+        -Wall
+        -Werror
+        -Wextra
 )
 

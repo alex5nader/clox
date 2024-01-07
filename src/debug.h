@@ -6,4 +6,4 @@
 void disassembleChunk(Chunk* chunk, char const* name);
 int disassembleInstruction(Chunk* chunk, int offset);
 
-#endif //CLOX_DEBUG_H
+#endif // CLOX_DEBUG_H

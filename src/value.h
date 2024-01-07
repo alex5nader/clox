@@ -17,4 +17,4 @@ void initValueArray(ValueArray*);
 void writeValueArray(ValueArray* array, Value value);
 void freeValueArray(ValueArray*);
 
-#endif //CLOX_VALUE_H
+#endif // CLOX_VALUE_H

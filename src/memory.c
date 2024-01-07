@@ -2,9 +2,9 @@
 
 #include "memory.h"
 
-void *reallocate(void* pointer, size_t oldSize, size_t newSize) {
+void* reallocate(void* pointer, size_t oldSize, size_t newSize) {
     // unused for now, will be used for GC
-    (void)oldSize;
+    (void) oldSize;
 
     if (newSize == 0) {
         free(pointer);
