@@ -1,8 +1,10 @@
-#include <stdio.h>
+#include "vm.h"
 
 #include "common.h"
+#include "compiler.h"
 #include "debug.h"
-#include "vm.h"
+
+#include <stdio.h>
 
 VM vm;
 
@@ -16,7 +18,7 @@ void initVM() {
 
 void freeVM() {}
 
-static InterpretResult run() {
+__attribute((used)) static InterpretResult run() {
 #define READ_BYTE() (*vm.ip++)
 #define READ_CONSTANT() (vm.chunk->constants.values[READ_BYTE()])
 #define BINARY_OP(op)                                                                                                  \
@@ -73,10 +75,9 @@ static InterpretResult run() {
 #undef READ_BYTE
 }
 
-InterpretResult interpret(Chunk* chunk) {
-    vm.chunk = chunk;
-    vm.ip = vm.chunk->code;
-    return run();
+InterpretResult interpret(char const* source) {
+    compile(source);
+    return INTERPRET_OK;
 }
 
 void push(Value value) {

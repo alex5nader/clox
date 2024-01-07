@@ -6,3 +6,5 @@ QualifierAlignment: Right
 ColumnLimit: 120
 AllowShortFunctionsOnASingleLine: Empty
 InsertBraces: true
+IncludeBlocks: Regroup
+AlignOperands: AlignAfterOperator

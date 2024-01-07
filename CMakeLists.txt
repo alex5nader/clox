@@ -14,6 +14,10 @@ set(SOURCES
         src/value.h
         src/vm.c
         src/vm.h
+        src/compiler.c
+        src/compiler.h
+        src/scanner.c
+        src/scanner.h
 )
 
 add_executable(project ${SOURCES})
