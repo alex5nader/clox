@@ -18,12 +18,14 @@ set(SOURCES
         src/compiler.h
         src/scanner.c
         src/scanner.h
+        src/object.c
+        src/object.h
 )
 
-add_executable(project ${SOURCES})
+add_executable(clox ${SOURCES})
 
-set_property(TARGET project PROPERTY C_STANDARD 99)
-target_compile_options(project
+set_property(TARGET clox PROPERTY C_STANDARD 99)
+target_compile_options(clox
         PRIVATE
         -Wall
         -Werror
