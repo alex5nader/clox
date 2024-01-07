@@ -8,3 +8,4 @@ AllowShortFunctionsOnASingleLine: Empty
 InsertBraces: true
 IncludeBlocks: Regroup
 AlignOperands: AlignAfterOperator
+AlignConsecutiveMacros: Consecutive
