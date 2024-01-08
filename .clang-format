@@ -9,3 +9,4 @@ InsertBraces: true
 IncludeBlocks: Regroup
 AlignOperands: AlignAfterOperator
 AlignConsecutiveMacros: Consecutive
+BreakBeforeBinaryOperators: All
