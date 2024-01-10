@@ -2,14 +2,10 @@
 #define CLOX_COMPILER_H
 
 #include "chunk.h"
+#include "object.h"
 
 #include <stdbool.h>
 
-typedef enum {
-    COMPILE_OK = true,
-    COMPILE_ERROR = false,
-} CompileResult;
-
-CompileResult compile(char const* source, Chunk* chunk);
+ObjFunction* compile(char const* source);
 
 #endif // CLOX_COMPILER_H
