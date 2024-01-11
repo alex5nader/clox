@@ -1,0 +1,39 @@
+fun Vector(x, y) {
+    fun add(other) {
+        var xSum = x + getX(other);
+        var ySum = y + getY(other);
+
+        return Vector(xSum, ySum);
+    }
+
+    fun exec(op) {
+        if (op == "getX") {
+            return x;
+        } else if (op == "getY") {
+            return y;
+        } else if (op == "add") {
+            return add;
+        }
+    }
+
+    return exec;
+}
+
+fun getX(vector) {
+    return vector("getX");
+}
+
+fun getY(vector) {
+    return vector("getY");
+}
+
+fun add(vectorA, vectorB) {
+    return vectorA("add")(vectorB);
+}
+
+var one = Vector(1, 1);
+var two = Vector(2, 2);
+var three = add(one, two);
+
+print getX(three);
+print getY(three);

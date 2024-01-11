@@ -1,4 +1,4 @@
 build
 .direnv
 cmake-build-debug
-scratch.clox
+scratch.lox
