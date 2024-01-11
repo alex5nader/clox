@@ -4,6 +4,7 @@
 #include "common.h"
 
 typedef struct Obj Obj;
+typedef struct ObjBoundMethod ObjBoundMethod;
 typedef struct ObjClass ObjClass;
 typedef struct ObjClosure ObjClosure;
 typedef struct ObjFunction ObjFunction;
