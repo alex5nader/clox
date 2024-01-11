@@ -10,3 +10,6 @@ IncludeBlocks: Regroup
 AlignOperands: AlignAfterOperator
 AlignConsecutiveMacros: Consecutive
 BreakBeforeBinaryOperators: All
+AlignAfterOpenBracket: BlockIndent
+BinPackArguments: false
+BinPackParameters: false
