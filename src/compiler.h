@@ -8,4 +8,6 @@
 
 ObjFunction* compile(char const* source);
 
+void markCompilerRoots();
+
 #endif // CLOX_COMPILER_H

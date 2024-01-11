@@ -143,11 +143,29 @@ ObjString* tableFindString(Table* table, char const* chars, int length, uint32_t
             if (IS_NIL(entry->value)) {
                 return NULL;
             }
-        } else if (entry->key->length == length && entry->key->hash == hash
-                   && memcmp(entry->key->chars, chars, length) == 0) {
+        } else if (entry->key->length == length && entry->key->hash == hash && memcmp(entry->key->chars, chars, length) == 0) {
             return entry->key;
         }
 
         index = (index + 1) % table->capacity;
+    }
+}
+
+void tableRemoveWhite(Table* table) {
+    for (int i = 0; i < table->capacity; ++i) {
+        Entry* entry = &table->entries[i];
+
+        if (entry->key != NULL && !entry->key->obj.isMarked) {
+            tableDelete(table, entry->key);
+        }
+    }
+}
+
+void markTable(Table* table) {
+    for (int i = 0; i < table->capacity; ++i) {
+        Entry* entry = &table->entries[i];
+
+        markObject((Obj*) entry->key);
+        markValue(entry->value);
     }
 }

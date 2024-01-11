@@ -24,4 +24,7 @@ bool tableDelete(Table*, ObjString* key);
 void tableAddAll(Table* src, Table* dest);
 ObjString* tableFindString(Table*, char const* chars, int length, uint32_t hash);
 
+void tableRemoveWhite(Table* table);
+void markTable(Table* table);
+
 #endif // CLOX_TABLE_H
