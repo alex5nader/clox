@@ -1,0 +1,3 @@
+var x = "free" + " me";
+x = "goodbye";
+var y = "alloc" + "ate";
